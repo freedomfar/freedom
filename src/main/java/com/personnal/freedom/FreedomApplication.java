@@ -9,4 +9,5 @@ public class FreedomApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FreedomApplication.class, args);
 	}
+	//测试提交
 }

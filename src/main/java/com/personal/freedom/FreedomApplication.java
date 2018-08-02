@@ -1,4 +1,4 @@
-package com.personnal.freedom;
+package com.personal.freedom;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

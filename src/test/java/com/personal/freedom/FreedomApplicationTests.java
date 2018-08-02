@@ -1,4 +1,4 @@
-package com.personnal.freedom;
+package com.personal.freedom;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

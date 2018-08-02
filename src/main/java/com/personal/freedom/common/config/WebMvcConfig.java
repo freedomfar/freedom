@@ -1,4 +1,4 @@
-package com.personnal.freedom.common.config;
+package com.personal.freedom.common.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

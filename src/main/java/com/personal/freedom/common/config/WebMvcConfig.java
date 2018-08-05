@@ -17,7 +17,9 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //登入页面配置
-        registry.addViewController("/login").setViewName("login");
+//        registry.addViewController("/login").setViewName("login");
+        //主页配置
+        registry.addViewController("/main").setViewName("main");
         //出错页面配置
         registry.addViewController("/error").setViewName("error");
     }

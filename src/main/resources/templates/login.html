@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
 <meta content="text/html;charset=UTF-8"/>
-<title>登录页面</title>
-<style type="text/css">
-	body {
-  padding-top: 50px;
-}
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
-}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link th:href="@{css/login-style.css}" rel="stylesheet"/>
+<head>
+    <title>登录页面</title>
 </head>
 <body>
-<h1>测试登入</h1>
+<div class="message warning">
+    <div class="inset">
+        <form action="#" th:action="@{/mainUser/userLogin}" th:object="${mainUser}" method="post">
+            <li>
+                <input type="text" class="text" th:field="*{userName}" onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'userName';}"><a href="#" class=" icon user"></a>
+            </li>
+            <div class="clear"></div>
+            <li>
+                <input type="password" th:field="*{userPassword}" onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Password';}"> <a href="#" class="icon lock"></a>
+            </li>
+            <div class="clear"></div>
+            <div class="submit">
+                <input type="submit" value="Sign in">
+                <h4><a href="#">Lost your Password ?</a></h4>
+                <div class="clear"></div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<!--- footer --->
+<div class="footer">
+    <p>Copyright &copy; 2014.</p>
+</div>
 </body>
 </html>

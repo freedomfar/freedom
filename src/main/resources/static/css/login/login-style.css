@@ -118,7 +118,7 @@ img {
 body {
     font-family: 'Droid Sans', sans-serif;
     font-size: 100%;
-    background: url(../img/bg1.jpg);
+    background: url(../../img/bg1.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -167,7 +167,7 @@ form li {
 }
 
 .icon {
-    background: url(../img/icons.png) no-repeat 0px 0px;
+    background: url(../../img/icons.png) no-repeat 0px 0px;
     height: 30px;
     width: 30px;
     display: block;
@@ -176,12 +176,12 @@ form li {
 }
 
 .user {
-    background: url(../img/icons.png) no-repeat 7px 1px;
+    background: url(../../img/icons.png) no-repeat 7px 1px;
 
 }
 
 .lock {
-    background: url(../img/icons.png) no-repeat -22px 1px;
+    background: url(../../img/icons.png) no-repeat -22px 1px;
 }
 
 input[type="text"], input[type="password"] {
@@ -323,7 +323,7 @@ input[type="button"]:hover {
 	-o-border-radius: 6px;
 }
 .alert-close {
-	background: url('../img/into.png') no-repeat 0px 3px;
+	background: url('../../img/into.png') no-repeat 0px 3px;
 	cursor: pointer;
 	height: 30px;
 	position: absolute;

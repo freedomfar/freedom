@@ -2,18 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:include="include/includebase"></head>
 <head>
+    <!--网页页面字符集-->
     <meta charset="utf-8">
+    <!--让IE使用最新的渲染模式-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Sentra HTML CSS Template</title>
-    <meta name="description" content="">
+    <!--针对移动设备,网站显示宽度等于设备屏幕显示宽度,内容缩放比例为1:1-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--将下面的 <meta> 标签加入到页面中，可以让部分国产浏览器默认采用高速模式渲染页面：-->
+    <meta name="renderer" content="webkit">
+    <title>你的地盘，谁做主？</title>
+    <link th:href="@{/css/main/fontAwesome.css}" rel="stylesheet"/>
+    <link th:href="@{/css/main/owl-carousel.css}" rel="stylesheet"/>
+    <link th:href="@{/css/main/templatemo-style.css}" rel="stylesheet"/>
+    <link th:href="@{/css/main/light-box.css}" rel="stylesheet"/>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 </head>
 
 <body>
-
-
 <header class="nav-down responsive-nav hidden-lg hidden-md">
     <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
         <span class="sr-only">Toggle navigation</span>
@@ -21,7 +27,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <!--/.navbar-header-->
+    <!--/.navbar-header     适应移动端的导航栏-->
     <div id="main-nav" class="collapse navbar-collapse">
         <nav>
             <ul class="nav navbar-nav">
@@ -35,7 +41,7 @@
         </nav>
     </div>
 </header>
-
+<!--适应pc端的导航栏-->
 <div class="sidebar-navigation hidde-sm hidden-xs">
     <div class="logo">
         <a href="#">Sen<em>tra</em></a>
@@ -94,7 +100,7 @@
         <li><a href="#"><i class="fa fa-behance"></i></a></li>
     </ul>
 </div>
-
+<!--首页滚动图 现在共三个，后期滚动更多图片-->
 <div class="slider">
     <div class="Modern-Slider content-section" id="top">
         <!-- Item -->
@@ -103,10 +109,10 @@
                 <div class="image"></div>
                 <div class="info">
                     <div>
-                        <h1>Beautiful Template<br>Sentra</h1>
-                        <p>This is a HTML CSS template provided by
-                            <a href="#" target="_blank">template</a> website.<br>
-                            Please tell your friends about our site.</p>
+                        <h1>What Is<br>Freedom</h1>
+                        <p>Where you want to go
+                            <a href="#" target="_blank"></a> <br>
+                            And you must will go</p>
                         <div class="white-button button">
                             <a href="#featured">Discover More</a>
                         </div>
@@ -121,9 +127,9 @@
                 <div class="image"></div>
                 <div class="info">
                     <div>
-                        <h1>Lorem ipsum <br>dolor</h1>
-                        <p>Phasellus luctus odio eget dui imperdiet, at pulvinar ante convallis.
-                            <br>Proin sit amet fringilla erat.</p>
+                        <h1>What Is <br>Life</h1>
+                        <p>Try your best to do
+                            <br>What you like</p>
 
                         <div class="white-button button">
                             <a href="#featured">Discover More</a>
@@ -139,10 +145,8 @@
                 <div class="image"></div>
                 <div class="info">
                     <div>
-                        <h1>Suspendisse suscipit<br>nulla sed</h1>
-                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <br>posuere cubilia Curae;
-                            Sed at massa turpis.</p>
-
+                        <h1>What Is<br>You</h1>
+                        <p>All the world <br>Just only you</p>
                         <div class="white-button button">
                             <a href="#featured">Discover More</a>
                         </div>
@@ -154,28 +158,28 @@
     </div>
 </div>
 
-
 <div class="page-content">
+    <!--最爱之地-->
     <section id="featured" class="content-section">
         <div class="section-heading">
-            <h1>Featured<br><em>Places</em></h1>
-            <p>Praesent pellentesque efficitur magna,
-                <br>sed pellentesque neque malesuada vitae.</p>
+            <h1>最爱<br><em>之地</em></h1>
+            <p>总有一些地方让你流连忘返
+                <br><em>&emsp;总有一些地方让你沉醉不已</em></p>
         </div>
+        <!--模板循环，从数据库读取-->
         <div class="section-content">
             <div class="owl-carousel owl-theme">
                 <div class="item">
                     <div class="image">
                         <img th:src="@{/img/featured_1.jpg}" alt="">
                         <div class="featured-button button">
-                            <a href="#projects">Continue Reading</a>
+                            <a href="#projects">连接到详情</a>
                         </div>
                     </div>
                     <div class="text-content">
-                        <h4>Lorem ipsum dolor</h4>
-                        <span>Proin et sapien</span>
-                        <p>#1 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                            Sed at massa turpis. Fusce ut pretium dui, vitae ullamcorper velit.</p>
+                        <h4>景点名称</h4>
+                        <span>简单介绍</span>
+                        <p>摘要</p>
                     </div>
                 </div>
                 <div class="item">
@@ -293,50 +297,56 @@
             </div>
         </div>
     </section>
+    <!--最近上传 模板遍历数据库-->
     <section id="projects" class="content-section">
         <div class="section-heading">
-            <h1>Recent<br><em>Projects</em></h1>
-            <p>Praesent pellentesque efficitur magna,
-                <br>sed pellentesque neque malesuada vitae.</p>
+            <h1>最近<br><em>所到</em></h1>
+            <p>世界这么大，你不可能看完
+                <br>只要心不变，走过的总在变多</p>
         </div>
         <div class="section-content">
             <div class="masonry">
                 <div class="row">
                     <div class="item">
                         <div class="col-md-8">
-                            <a th:href="@{/img/portfolio_big_1.jpg}" data-lightbox="image"><img th:src="@{/img/portfolio_1.jpg}"
-                                                                                         alt="image 1"></a>
+                            <a th:href="@{/img/portfolio_big_1.jpg}" data-lightbox="image">
+                                <img th:src="@{/img/portfolio_1.jpg}" alt="image 1">
+                            </a>
                         </div>
                     </div>
                     <div class="item second-item">
                         <div class="col-md-4">
-                            <a th:href="@{/img/portfolio_big_2.jpg}" data-lightbox="image"><img th:src="@{/img/portfolio_2.jpg}"
-                                                                                         alt="image 2"></a>
+                            <a th:href="@{/img/portfolio_big_2.jpg}" data-lightbox="image">
+                                <img th:src="@{/img/portfolio_2.jpg}" alt="image 2">
+                            </a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-md-4">
-                            <a th:href="@{/img/portfolio_big_3.jpg}" data-lightbox="image"><img th:src="@{/img/portfolio_3.jpg}"
-                                                                                         alt="image 3"></a>
+                            <a th:href="@{/img/portfolio_big_3.jpg}" data-lightbox="image">
+                                <img th:src="@{/img/portfolio_3.jpg}" alt="image 3">
+                            </a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-md-4">
-                            <a th:href="@{/img/portfolio_big_4.jpg}" data-lightbox="image"><img th:src="@{/img/portfolio_4.jpg}"
-                                                                                         alt="image 4"></a>
+                            <a th:href="@{/img/portfolio_big_4.jpg}" data-lightbox="image">
+                                <img th:src="@{/img/portfolio_4.jpg}" alt="image 4">
+                            </a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-md-8">
-                            <a th:href="@{/img/portfolio_big_5.jpg}" data-lightbox="image"><img th:src="@{/img/portfolio_5.jpg}"
-                                                                                         alt="image 5"></a>
+                            <a th:href="@{/img/portfolio_big_5.jpg}" data-lightbox="image">
+                                <img th:src="@{/img/portfolio_5.jpg}" alt="image 5">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tlinks">Collect from <a href="http://www.cssmoban.com/" title="网站模板">网站模板</a></div>
     </section>
+    <!--视频-->
     <section id="video" class="content-section">
         <div class="row">
             <div class="col-md-12">
@@ -366,15 +376,17 @@
             </div>
         </div>
     </section>
+    <!--随笔-->
     <section id="blog" class="content-section">
         <div class="section-heading">
-            <h1>Blog<br><em>Entries</em></h1>
-            <p>Curabitur hendrerit mauris mollis ipsum vulputate rutrum.
-                <br>Phasellus luctus odio eget dui imperdiet.</p>
+            <h1>随心<br><em>所笔</em></h1>
+            <p>喜欢拿起笔随便写点什么，或好或坏
+                <br>岁月的水流里，总不会清澈见底，亦真亦假</p>
         </div>
         <div class="section-content">
             <div class="tabs-content">
                 <div class="wrapper">
+                    <!--月份，根据当前时间取，下面的内容根据标签从数据库中取-->
                     <ul class="tabs clearfix" data-tabgroup="first-tab-group">
                         <li><a href="#tab1" class="active">July 2018</a></li>
                         <li><a href="#tab2">June 2018</a></li>
@@ -607,6 +619,7 @@
             </div>
         </div>
     </section>
+    <!--下一个准备去的地方地图-->
     <section id="contact" class="content-section">
         <div id="map">
 
@@ -620,7 +633,7 @@
         </div>
         <div id="contact-content">
             <div class="section-heading">
-                <h1>Contact<br><em>Sentra</em></h1>
+                <h1>下一次<br><em>流浪</em></h1>
                 <p>Curabitur hendrerit mauris mollis ipsum vulputate rutrum.
                     <br>Phasellus luctus odio eget dui imperdiet.</p>
 
@@ -662,17 +675,13 @@
             </div>
         </div>
     </section>
+    <!--底部版权声明-->
     <section class="footer">
-        <p>Copyright &copy; 2018 Company Name . Design: <a href="" target="_blank">Sentra</a> More Templates <a
-                href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a
-                href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+        <p>Copyright &copy; 2018 GUOYS . Design: <a href="" target="_blank">GUOYS</a> </p>
     </section>
 </div>
 
-
 <script>window.jQuery || document.write('<script th:src="@{/js/jquery.js}"><\/script>')</script>
-
-
 
 <script>
     // Hide Header on on scroll down

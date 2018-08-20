@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:include="include/includebase"></head>
 <head>
     <!--网页页面字符集-->
     <meta charset="utf-8">
@@ -11,12 +10,15 @@
     <!--将下面的 <meta> 标签加入到页面中，可以让部分国产浏览器默认采用高速模式渲染页面：-->
     <meta name="renderer" content="webkit">
     <title>你的地盘，谁做主？</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap-theme.min.css}" rel="stylesheet"/>
     <link th:href="@{/css/main/fontAwesome.css}" rel="stylesheet"/>
     <link th:href="@{/css/main/owl-carousel.css}" rel="stylesheet"/>
     <link th:href="@{/css/main/templatemo-style.css}" rel="stylesheet"/>
     <link th:href="@{/css/main/light-box.css}" rel="stylesheet"/>
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <script th:src="@{/js/modernizr-2.8.3-respond-1.4.2.min.js}"></script>
 </head>
 
 <body>
@@ -680,8 +682,11 @@
         <p>Copyright &copy; 2018 GUOYS . Design: <a href="" target="_blank">GUOYS</a> </p>
     </section>
 </div>
-
-<script>window.jQuery || document.write('<script th:src="@{/js/jquery.js}"><\/script>')</script>
+<script th:src="@{/js/jquery-1.11.2.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/plugins.js}"></script>
+<script>window.jQuery || document.write('<script th:src="@{/js/jquery-1.11.2.min.js}"><\/script>')</script>
 
 <script>
     // Hide Header on on scroll down

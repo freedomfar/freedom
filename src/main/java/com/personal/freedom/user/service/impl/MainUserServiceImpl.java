@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- *  服务实现类
+ * 用户主表 服务实现类
  * </p>
  *
- * @author 郭永胜123
- * @since 2018-08-02
+ * @author guoys123
+ * @since 2018-08-23
  */
 @Service
 public class MainUserServiceImpl extends ServiceImpl<MainUserMapper, MainUser> implements IMainUserService {

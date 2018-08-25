@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.personal.freedom.user.mapper.MainUserPictureMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.personal.freedom.user.entity.MainUserPicture">
+        <id column="id_main_user_picture" property="idMainUserPicture" />
+        <result column="id_main_user" property="idMainUser" />
+        <result column="id_main_user_album" property="idMainUserAlbum" />
+        <result column="picture_lable" property="pictureLable" />
+        <result column="picture_url" property="pictureUrl" />
+        <result column="picture_description" property="pictureDescription" />
+        <result column="picture_size" property="pictureSize" />
+        <result column="delete_flag" property="deleteFlag" />
+        <result column="index_flag" property="indexFlag" />
+        <result column="cover_flag" property="coverFlag" />
+        <result column="update_date" property="updateDate" />
+        <result column="update_user" property="updateUser" />
+        <result column="create_date" property="createDate" />
+        <result column="create_user" property="createUser" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id_main_user_picture AS idMainUserPicture, id_main_user AS idMainUser, id_main_user_album AS idMainUserAlbum, picture_lable AS pictureLable, picture_url AS pictureUrl, picture_description AS pictureDescription, picture_size AS pictureSize, delete_flag AS deleteFlag, index_flag AS indexFlag, cover_flag AS coverFlag, update_date AS updateDate, update_user AS updateUser, create_date AS createDate, create_user AS createUser
+    </sql>
+
+</mapper>

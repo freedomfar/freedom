@@ -2,53 +2,65 @@ package com.personal.freedom.user.entity;
 
 import java.io.Serializable;
 
+import java.util.Date;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableName;
+import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotations.Version;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
 /**
  * <p>
- * 
+ * 用户主表
  * </p>
  *
- * @author 郭永胜123
- * @since 2018-08-02
+ * @author guoys123
+ * @since 2018-08-23
  */
-public class MainUser implements Serializable {
+@Data
+@EqualsAndHashCode(callSuper = true)
+@Accessors(chain = true)
+@TableName("main_user")
+public class MainUser extends Model<MainUser> {
 
     private static final long serialVersionUID = 1L;
 
-    private String userId;
+    /**
+     * 用户主键
+     */
+    @TableId("id_main_user")
+    private String idMainUser;
+    /**
+     * 用户登入名
+     */
+    @TableField("user_name")
     private String userName;
+    /**
+     * 用户密码
+     */
+    @TableField("user_password")
     private String userPassword;
+    /**
+     * 用户手机号
+     */
+    @TableField("user_phone")
+    private String userPhone;
+    /**
+     * 创建时间
+     */
+    @TableField("create_date")
+    private Date createDate;
 
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
 
     @Override
-    public String toString() {
-        return "MainUser{" +
-        "userId=" + userId +
-        ", userName=" + userName +
-        ", userPassword=" + userPassword +
-        "}";
+    protected Serializable pkVal() {
+        return this.idMainUser;
     }
+
 }

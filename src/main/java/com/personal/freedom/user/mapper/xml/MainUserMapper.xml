@@ -2,7 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.personal.freedom.user.mapper.MainUserMapper">
 
-    <!-- 开启二级缓存 -->
-    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.personal.freedom.user.entity.MainUser">
+        <id column="id_main_user" property="idMainUser" />
+        <result column="user_name" property="userName" />
+        <result column="user_password" property="userPassword" />
+        <result column="user_phone" property="userPhone" />
+        <result column="create_date" property="createDate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id_main_user AS idMainUser, user_name AS userName, user_password AS userPassword, user_phone AS userPhone, create_date AS createDate
+    </sql>
 
 </mapper>

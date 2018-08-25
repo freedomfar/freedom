@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.personal.freedom.user.mapper.MainUserAlbumMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.personal.freedom.user.entity.MainUserAlbum">
+        <id column="id_main_user_album" property="idMainUserAlbum" />
+        <result column="id_main_user" property="idMainUser" />
+        <result column="id_main_user_article" property="idMainUserArticle" />
+        <result column="album_name" property="albumName" />
+        <result column="album_place" property="albumPlace" />
+        <result column="album_description" property="albumDescription" />
+        <result column="album_size" property="albumSize" />
+        <result column="delete_flag" property="deleteFlag" />
+        <result column="update_date" property="updateDate" />
+        <result column="update_user" property="updateUser" />
+        <result column="crete_date" property="creteDate" />
+        <result column="crete_user" property="creteUser" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id_main_user_album AS idMainUserAlbum, id_main_user AS idMainUser, id_main_user_article AS idMainUserArticle, album_name AS albumName, album_place AS albumPlace, album_description AS albumDescription, album_size AS albumSize, delete_flag AS deleteFlag, update_date AS updateDate, update_user AS updateUser, crete_date AS creteDate, crete_user AS creteUser
+    </sql>
+
+</mapper>

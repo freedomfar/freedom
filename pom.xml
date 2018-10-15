@@ -6,7 +6,11 @@
     <groupId>com.personnal.freedom</groupId>
     <artifactId>freedom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <modules>
+        <module>web</module>
+        <module>mysql</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>freedom</name>
     <description>Personal project for Spring Boot</description>

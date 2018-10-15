@@ -8,9 +8,6 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
-import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotations.Version;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +15,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 用户相册
+ * 用户相片
  * </p>
  *
  * @author guoys123
@@ -27,51 +24,61 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("main_user_album")
-public class MainUserAlbum extends Model<MainUserAlbum> {
+@TableName("main_user_picture")
+public class MainUserPicture extends Model<MainUserPicture> {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户相册主键
+     * 用户图片主键
      */
-    @TableId("id_main_user_album")
-    private String idMainUserAlbum;
+    @TableId("id_main_user_picture")
+    private String idMainUserPicture;
     /**
      * 用户主键
      */
     @TableField("id_main_user")
     private String idMainUser;
     /**
-     * 用户文章主键
+     * 用户相册主键
      */
-    @TableField("id_main_user_article")
-    private String idMainUserArticle;
+    @TableField("id_main_user_album")
+    private String idMainUserAlbum;
     /**
-     * 相册名称
+     * 图片标签
      */
-    @TableField("album_name")
-    private String albumName;
+    @TableField("picture_lable")
+    private String pictureLable;
     /**
-     * 相册拍摄地点
+     * 图片存储地址
      */
-    @TableField("album_place")
-    private String albumPlace;
+    @TableField("picture_url")
+    private String pictureUrl;
     /**
-     * 相册描述
+     * 图片描述
      */
-    @TableField("album_description")
-    private String albumDescription;
+    @TableField("picture_description")
+    private String pictureDescription;
     /**
-     * 相册大小
+     * 图片大小
      */
-    @TableField("album_size")
-    private BigDecimal albumSize;
+    @TableField("picture_size")
+    private BigDecimal pictureSize;
     /**
      * 是否删除
      */
     @TableField("delete_flag")
     private Boolean deleteFlag;
+    /**
+     * 是否首页滚动
+     */
+    @TableField("index_flag")
+    private Boolean indexFlag;
+    /**
+     * 是否为封面
+     */
+    @TableField("cover_flag")
+    private Boolean coverFlag;
     /**
      * 更新时间
      */
@@ -85,18 +92,18 @@ public class MainUserAlbum extends Model<MainUserAlbum> {
     /**
      * 创建时间
      */
-    @TableField("crete_date")
-    private Date creteDate;
+    @TableField("create_date")
+    private Date createDate;
     /**
      * 创建用户
      */
-    @TableField("crete_user")
-    private String creteUser;
+    @TableField("create_user")
+    private String createUser;
 
 
     @Override
     protected Serializable pkVal() {
-        return this.idMainUserAlbum;
+        return this.idMainUserPicture;
     }
 
 }

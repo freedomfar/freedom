@@ -2,8 +2,8 @@ package com.personal.freedom.user.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.personal.freedom.user.entity.MainUserPicture;
-import com.personal.freedom.user.mapper.MainUserPictureMapper;
 import com.personal.freedom.user.service.IMainUserPictureService;
+import com.personal.freedom.user.mapper.MainUserPictureMapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

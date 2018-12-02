@@ -15,7 +15,7 @@ public class FreedomApplication {
 		SpringApplication.run(FreedomApplication.class, args);
 	}
 
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/")
 	public String userRegister(Model model){
 		MainUser mainUser = new MainUser();
 		model.addAttribute("mainUser",mainUser);

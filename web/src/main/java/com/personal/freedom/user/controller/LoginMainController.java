@@ -40,7 +40,8 @@ public class LoginMainController {
         model.addObject("pictureList", pictureList);
         //首页相册
         List<MainUserAlbum> albumList = mainUserAlbumService.findAlbumByUserId("1");
-        model.setViewName("main");
+        model.addObject("albumList", albumList);
+        model.setViewName("/main");
         return model;
     }
 
@@ -49,7 +50,7 @@ public class LoginMainController {
      *
      * @return
      */
-    @RequestMapping(path = "/main", method = RequestMethod.GET)
+    @RequestMapping(path = "/main", method = RequestMethod.POST)
     public ModelAndView main(){
         ModelAndView model = new ModelAndView();
         //加载主页所需数据
@@ -58,7 +59,7 @@ public class LoginMainController {
         //加载首页相册
         List<MainUserAlbum> albumList = mainUserAlbumService.findAlbumByUserId("1");
         model.addObject("albumList", albumList);
-        model.setViewName("main");
+        model.setViewName("/main");
         return model;
     }
 }

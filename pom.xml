@@ -29,6 +29,7 @@
         <mysql.version>5.1.41</mysql.version>
         <guava.version>18.0</guava.version>
         <org.mapstruct.version>1.1.0.Final</org.mapstruct.version>
+        <alibaba.druid>1.1.3</alibaba.druid>
     </properties>
 
     <dependencies>
@@ -37,7 +38,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.3</version>
+            <version>${alibaba.druid}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -68,14 +69,16 @@
         </dependency>
 
         <!-- 模板引擎 -->
-        <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity</artifactId>
-            <version>1.7</version>
-        </dependency>
+        <!--Velocity是一个基于java的模板引擎（template engine）。
+        它允许任何人仅仅简单的使用模板语言（template language）来引用由java代码定义的对象。-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.velocity</groupId>-->
+            <!--<artifactId>velocity</artifactId>-->
+            <!--<version>1.7</version>-->
+        <!--</dependency>-->
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
+                <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
@@ -189,12 +192,6 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
-        <!-- 添加对websocket的支持 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -253,7 +250,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.10</version>
+            <version>1.18.4</version>
         </dependency>
 
     </dependencies>
@@ -263,6 +260,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 自定义输出jar包名称-->
+                <configuration>
+                    <mainClass>com.personal.freedom.FreedomApplication</mainClass>
+                </configuration>
             </plugin>
             <!-- 增加mapstruct自动编译实现生成impkl文件 -->
             <plugin>
@@ -273,10 +274,16 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <annotationProcessorPaths>
+                        <!--打包时mapstruct和lombok同时配置，解决冲突-->
                         <path>
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>
                             <version>${org.mapstruct.version}</version>
+                        </path>
+                        <path>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>1.18.4</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
